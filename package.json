@@ -26,6 +26,7 @@
   "homepage": "https://github.com/actions/javascript-action#readme",
   "dependencies": {
     "@actions/core": "^1.2.5",
+    "@slack/webhook": "^6.0.0",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
