@@ -8,7 +8,7 @@ async function run() {
     const ms = core.getInput('milliseconds');
     core.info(`Waiting ${ms} milliseconds ...`);
     const response = await fetch('https://jiangweixian-cheatsheets.vercel.app/api/labels?page=1', { method: 'GET' })
-    core.setOutput('response', JSON.stringify(response))
+    core.info(JSON.stringify(response))
     core.debug((new Date()).toTimeString()); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
     await wait(parseInt(ms));
     core.info((new Date()).toTimeString());
