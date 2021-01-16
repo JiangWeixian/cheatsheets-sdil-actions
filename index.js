@@ -7,11 +7,11 @@ const { IncomingWebhook } = require('@slack/webhook')
 async function run() {
   try {
     const ms = core.getInput('milliseconds');
-    const url = core.getInput('SLACK_WEBHOOK')
+    const url = process.env.SLACK_WEBHOOK
     const webhook = new IncomingWebhook(url);
     core.info(`Waiting ${ms} milliseconds ...`);
     const response = await fetch('https://jiangweixian-cheatsheets.vercel.app/api/someday', { method: 'GET' }).then(res => res.json())
-    core.info(JSON.stringify(response))
+    // core.info(JSON.stringify(response))
     core.info(url)
     await webhook.send({
       text: 'I\'ve got news for you...',
