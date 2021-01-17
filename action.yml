@@ -1,13 +1,18 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Someday, I learn'
+description: 'Send a cheatsheet to slack someday your learn'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  CHEATSHEET_HOST:
+    description: 'cheatsheet host'
     required: true
-    default: '1000'
+  SLACK_CHANNEL:
+    description: 'slack channel name'
+    required: true
+  debug:
+    description: 'debug flag'
+    required: false
 outputs:
   time: # output will be available to future steps
-    description: 'The message to output'
+    description: 'Success'
 runs:
   using: 'node12'
   main: 'dist/index.js'
