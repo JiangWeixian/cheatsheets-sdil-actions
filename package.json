@@ -1,7 +1,7 @@
 {
   "name": "cheatsheets-sdil-actions",
   "version": "1.0.0",
-  "description": "JavaScript Action Template",
+  "description": "Send someday cheatsheet",
   "main": "index.js",
   "scripts": {
     "lint": "eslint .",
@@ -11,19 +11,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/actions/javascript-action.git"
+    "url": "git+https://github.com/JiangWeixian/cheatsheets-sdil-actions.git"
   },
   "keywords": [
     "GitHub",
     "Actions",
-    "JavaScript"
+    "JavaScript",
+    "Cheatsheet",
+    "Slack",
+    "Cron"
   ],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/actions/javascript-action/issues"
+    "url": "https://github.com/JiangWeixian/cheatsheets-sdil-actions/issues"
   },
-  "homepage": "https://github.com/actions/javascript-action#readme",
+  "homepage": "https://github.com/JiangWeixian/cheatsheets-sdil-actions#readme",
   "dependencies": {
     "@actions/core": "^1.2.5",
     "@slack/webhook": "^6.0.0",
