@@ -6,7 +6,7 @@ inputs:
     required: true
   SLACK_CHANNEL:
     description: 'slack channel name'
-    required: true
+    required: false
   debug:
     description: 'debug flag'
     required: false

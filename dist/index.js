@@ -34,7 +34,7 @@ async function run() {
       const { body, created_at, labels, title } = response[0]
       await webhook.send({
         username: 'Cheatsheet Someday',
-        channel: '#til',
+        channel: channel,
         icon_url: 'https://a.slack-edge.com/production-standard-emoji-assets/13.0/apple-large/1f9d1-1f3fb-200d-1f4bb@2x.png',
         attachments: [
           {
