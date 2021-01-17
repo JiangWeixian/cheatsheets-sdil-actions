@@ -1,4 +1,4 @@
-# Cheatsheet someday i learn
+# Cheatsheet Someday I Learn - Github Action
 
 
 ## Usage
