@@ -29,25 +29,25 @@ async function run() {
     const response = await fetch('https://jiangweixian-cheatsheets.vercel.app/api/someday', { method: 'GET' }).then(res => res.json())
     // core.info(JSON.stringify(response))
     if (response && response[0]) {
-      const { body, created_at, labels } = response[0]
+      const { body, created_at, labels, title } = response[0]
       await webhook.send({
         username: 'Cheatsheet Someday',
         attachments: [
           {
             fallback: body,
-            pretext: body,
+            pretext: title,
             text: body,
             fields: [
+              {
+                title: 'Learned At',
+                value: dayjs(created_at).format('YYYY-MM-DD HH:mm:ss'),
+                short: false,
+              },
               {
                 title: 'Labels',
                 value: labels.map(label => label.name).join(','),
                 short: false,
               },
-              {
-                title: 'Learned At',
-                value: dayjs(created_at).format('YYYY-MM-DD HH:mm:ss'),
-                short: false,
-              }
             ]
           }
         ]
