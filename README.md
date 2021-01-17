@@ -33,8 +33,8 @@ jobs:
 |name|description|required|type|
 |:---:|:---:|:---:|:---|
 |CHEATSHEET_HOST|your cheatsheet website url|true|string|
-|SLACK_CHANNEL|slack channel|false||
-|debug|log flag|false|false|
+|SLACK_CHANNEL|slack channel|false|string|
+|debug|log flag|false|boolean|
 
 
 ## Develop
