@@ -14,7 +14,6 @@ module.exports = JSON.parse("{\"_from\":\"@slack/webhook\",\"_id\":\"@slack/webh
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
 const core = __webpack_require__(2186);
-const wait = __webpack_require__(4258);
 const fetch = __webpack_require__(467)
 const dayjs = __webpack_require__(7401)
 const { IncomingWebhook } = __webpack_require__(1095)
@@ -22,16 +21,15 @@ const { IncomingWebhook } = __webpack_require__(1095)
 // most @actions toolkit packages have async methods
 async function run() {
   try {
-    const ms = core.getInput('milliseconds');
     const url = process.env.SLACK_WEBHOOK
     const webhook = new IncomingWebhook(url);
-    core.info(`Waiting ${ms} milliseconds ...`);
     const response = await fetch('https://jiangweixian-cheatsheets.vercel.app/api/someday', { method: 'GET' }).then(res => res.json())
     // core.info(JSON.stringify(response))
     if (response && response[0]) {
       const { body, created_at, labels, title } = response[0]
       await webhook.send({
         username: 'Cheatsheet Someday',
+        icon_url: 'https://a.slack-edge.com/production-standard-emoji-assets/13.0/apple-large/1f9d1-1f3fb-200d-1f4bb@2x.png',
         attachments: [
           {
             fallback: body,
@@ -53,11 +51,6 @@ async function run() {
         ]
       });
     }
-    core.debug((new Date()).toTimeString()); // debug is only output if you set the secret `ACTIONS_RUNNER_DEBUG` to true
-    await wait(parseInt(ms));
-    core.info((new Date()).toTimeString());
-
-    core.setOutput('time', new Date().toTimeString());
   } catch (error) {
     core.setFailed(error.message);
   }
@@ -6063,23 +6056,6 @@ module.exports = {
 	stdout: getSupportLevel(process.stdout),
 	stderr: getSupportLevel(process.stderr)
 };
-
-
-/***/ }),
-
-/***/ 4258:
-/***/ ((module) => {
-
-let wait = function (milliseconds) {
-  return new Promise((resolve) => {
-    if (typeof milliseconds !== 'number') {
-      throw new Error('milliseconds not a number');
-    }
-    setTimeout(() => resolve("done!"), milliseconds)
-  });
-};
-
-module.exports = wait;
 
 
 /***/ }),
