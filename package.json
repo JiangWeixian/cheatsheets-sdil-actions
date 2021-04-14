@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/JiangWeixian/cheatsheets-sdil-actions#readme",
   "dependencies": {
-    "@actions/core": "^1.2.5",
+    "@actions/core": "^1.2.7",
     "@slack/webhook": "^6.0.0",
     "dayjs": "^1.10.4",
     "node-fetch": "^2.6.1"
