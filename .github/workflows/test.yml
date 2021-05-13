@@ -7,19 +7,13 @@ on:
       - 'releases/*'
 
 jobs:
-  # unit tests
-  units:
+  someday:
+    name: Someday
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - run: npm ci
-    - run: npm test
-
-  # test action works running from the graph
-  test:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: ./
+    - uses: JiangWeixian/cheatsheets-sdil-actions@v1
       with:
-        milliseconds: 1000
+          CHEATSHEET_HOST: jiangweixian-cheatsheets.vercel.app
+          debug: true
+      env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
