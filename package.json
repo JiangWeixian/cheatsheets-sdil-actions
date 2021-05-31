@@ -34,7 +34,7 @@
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
-    "@vercel/ncc": "^0.28.5",
+    "@vercel/ncc": "^0.28.6",
     "eslint": "^7.25.0",
     "jest": "^27.0.3"
   }
