@@ -30,7 +30,7 @@
   "dependencies": {
     "@actions/core": "^1.4.0",
     "@slack/webhook": "^6.0.0",
-    "dayjs": "^1.10.5",
+    "dayjs": "^1.10.6",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
